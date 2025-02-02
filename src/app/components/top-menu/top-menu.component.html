@@ -1,6 +1,8 @@
-<mat-tab-group>
-  <mat-tab label="Angular" href="['/preparation/angular']"></mat-tab>
-  <mat-tab label="Typescript" href="['/preparation/typescript']"></mat-tab>
-  <mat-tab label="Javascript" href="['/preparation/javascript']"></mat-tab>
-  <mat-tab label="RxJS" href="['/preparation/rxjs']"></mat-tab>
+<mat-tab-group
+  [selectedIndex]="tabIndex"
+  (selectedTabChange)="changeTab($event)"
+>
+  @for (tab of tabs; track tabs) {
+  <mat-tab [label]="tab"></mat-tab>
+  }
 </mat-tab-group>
