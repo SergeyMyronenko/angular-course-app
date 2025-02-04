@@ -8,7 +8,7 @@ import { Response, ResponseArray } from '../models/response.modules';
   providedIn: 'root',
 })
 export class CategoriesService {
-  public baseUrl = 'http://localhost:3000';
+  public baseUrl = 'http://localhost:4200';
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class CategoriesService {
   ): Observable<ResponseArray<QuestionItem>> {
     return this.http
       .get<ResponseArray<QuestionItem>>(
-        `${this.baseUrl}/category/${categoryName}`
+        `${this.baseUrl}/categories/${categoryName}`
       )
       .pipe(
         map((response: any) => {
